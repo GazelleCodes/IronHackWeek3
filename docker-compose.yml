@@ -36,8 +36,10 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
+      - ./dbt_project:/opt/airflow/dbt_project
+      - ./data:/opt/airflow/data
     ports:
-      - "8080:8080"
+      - "8081:8080"
     command: standalone
     restart: unless-stopped
 
